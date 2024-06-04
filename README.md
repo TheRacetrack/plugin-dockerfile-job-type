@@ -18,12 +18,10 @@ in any programming language, enclosed in a docker image by Dockerfile recipe.
   by uploading the zipped plugin file.
 
 ## Usage
-You can deploy sample Dockerfile job by running:
+You can deploy [sample Dockerfile job](./sample/dockerfile-python) by running:
 ```bash
-racetrack deploy sample/docker-golang-http
+racetrack deploy sample/dockerfile-python
 ```
-
-See [how to use Dockerfile job type](./docs/job_docker.md).
 
 # Development
 Setup & activate Python venv (this is required for local development):
