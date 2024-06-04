@@ -1,0 +1,8 @@
+name: dockerfile-python
+owner_email: sample@example.com
+jobtype: dockerfile:latest
+version: 0.0.1
+
+git:
+  remote: https://github.com/TheRacetrack/plugin-dockerfile-job-type
+  directory: sample/dockerfile-python

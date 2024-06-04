@@ -1,0 +1,4 @@
+name: dockerfile-job-type
+version: 1.0.0
+url: 'https://github.com/TheRacetrack/plugin-dockerfile-job-type'
+category: 'job-type'
