@@ -7,7 +7,7 @@ class Plugin:
                     {
                         'source': 'job',
                         'dockerfile_path': 'Dockerfile',
-                        'template': False,
+                        'template': True,
                     },
                 ],
             },
