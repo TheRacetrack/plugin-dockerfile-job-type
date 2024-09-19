@@ -23,6 +23,22 @@ You can deploy [sample Dockerfile job](./sample/dockerfile-python) by running:
 racetrack deploy sample/dockerfile-python
 ```
 
+## Using secrets
+You can use secret environment variables in your Dockerfile.
+Use [RUN --mount=type=secret](https://docs.docker.com/reference/dockerfile/#run---mounttypesecret)
+to access user's secret values without baking them into the image.
+The secret values will be taken according to `secret_build_env_file` field of a Job's manifest.
+If not provided, the secret will have empty data.
+
+Basically, use `RUN --mount=type=secret,id=build_secrets,target=/run/secrets/build_secrets.env` in your Dockerfile command 
+and activate the vars prepending the shell command with `env $(cat /run/secrets/build_secrets.env | xargs) `
+
+Here's the example:
+```dockefile
+RUN --mount=type=secret,id=build_secrets,target=/run/secrets/build_secrets.env \
+    env $(cat /run/secrets/build_secrets.env | xargs) pip install -r requirements.txt
+```
+
 # Development
 Setup & activate Python venv (this is required for local development):
 
